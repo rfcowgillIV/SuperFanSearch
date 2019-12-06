@@ -12,7 +12,9 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-
+    var schools = [School]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +87,35 @@ class MasterViewController: UITableViewController {
         }
     }
 
+    //load the api data
+    
+    func startLoad() {
+        let url = URL(string: "https://www.example.com/")!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                // TODO: Handel error
+                print("Error", error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                    // TODO: Handel server response
+                    print("Server Error", response as Any)
+                    return
+            }
+            if let mimeType = httpResponse.mimeType, mimeType == "application/json",
+                let data = data,
+                let string = String(data: data, encoding: .utf8) {
+                DispatchQueue.main.async {
+                 //   self.webView.loadHTMLString(string, baseURL: url)
+                    
+                    print("got data string", string)
+                }
+            }
+        }
+        task.resume()
+    }
+    
 
 }
 
