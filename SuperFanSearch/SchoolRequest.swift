@@ -25,22 +25,18 @@ struct SchoolRequest {
     }
     
     func getSchools(completion: @escaping(Result<[School], SchoolError>) -> Void) {
-        print("getSchools")
         let dataTask = URLSession.shared.dataTask(with: searchURL) {data, _, _ in
             guard let jsonData = data else {
-                print("error no data")
                 completion(.failure(.noDataAvailable))
                 return
             }
             
             do {
-                print("success")
                 let decoder = JSONDecoder()
                 let schoolResponse = try decoder.decode(SchoolData.self, from: jsonData)
                 let schoolData = schoolResponse.data
                 completion(.success(schoolData[0]))
             } catch {
-                print("error cannot process")
                 completion(.failure(.canNotProcessData))
             }
         }

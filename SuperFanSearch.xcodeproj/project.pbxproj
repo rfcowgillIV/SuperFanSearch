@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		5578DD48231FC5D6004F0EF8 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		55C09223232018EF00DA3AE5 /* SchoolRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolRequest.swift; sourceTree = "<group>"; };
-		55F58FFC231F1EBF0078066B /* SuperFanSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperFanSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F58FFC231F1EBF0078066B /* SchoolSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F58FFF231F1EBF0078066B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F59001231F1EBF0078066B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		55F59003231F1EBF0078066B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		55F58FFD231F1EBF0078066B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55F58FFC231F1EBF0078066B /* SuperFanSearch.app */,
+				55F58FFC231F1EBF0078066B /* SchoolSearch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55F58FFB231F1EBF0078066B /* SuperFanSearch */ = {
+		55F58FFB231F1EBF0078066B /* SchoolSearch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55F59010231F1EC00078066B /* Build configuration list for PBXNativeTarget "SuperFanSearch" */;
+			buildConfigurationList = 55F59010231F1EC00078066B /* Build configuration list for PBXNativeTarget "SchoolSearch" */;
 			buildPhases = (
 				55F58FF8231F1EBF0078066B /* Sources */,
 				55F58FF9231F1EBF0078066B /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = SuperFanSearch;
+			name = SchoolSearch;
 			productName = SuperFanSearch;
-			productReference = 55F58FFC231F1EBF0078066B /* SuperFanSearch.app */;
+			productReference = 55F58FFC231F1EBF0078066B /* SchoolSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55F58FFB231F1EBF0078066B /* SuperFanSearch */,
+				55F58FFB231F1EBF0078066B /* SchoolSearch */,
 			);
 		};
 /* End PBXProject section */
@@ -338,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55F59010231F1EC00078066B /* Build configuration list for PBXNativeTarget "SuperFanSearch" */ = {
+		55F59010231F1EC00078066B /* Build configuration list for PBXNativeTarget "SchoolSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55F59011231F1EC00078066B /* Debug */,

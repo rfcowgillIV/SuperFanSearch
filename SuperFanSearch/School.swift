@@ -17,8 +17,8 @@ struct SchoolData: Codable {
 }
 
 struct School: Codable {
-    let nid: String
+    let nid : String
     let name : String
     let address : String
-    let img: String
+    let img : String
 }
