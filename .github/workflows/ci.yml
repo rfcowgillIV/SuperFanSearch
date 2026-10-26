@@ -1,0 +1,45 @@
+# Automated build check (added October 2026)
+#
+# Every push and pull request to master compiles the app with the current Xcode
+# on a GitHub Mac, for the iPhone Simulator (no code signing needed). If it
+# builds here, it builds on your Mac. Compiled with love (and Swift).
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build for iOS Simulator
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project "SuperFanSearch.xcodeproj" \
+            -target "SchoolSearch" \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee build.log
+
+      # If the build fails, turn each compiler error into a GitHub annotation so it
+      # shows up right on the pull request's "Files changed" / "Checks" page.
+      - name: Report compiler errors
+        if: failure()
+        run: |
+          grep -E "(error|fatal error):" build.log | sort -u | head -40 | while IFS= read -r line; do
+            echo "::error::$line"
+          done
