@@ -27,9 +27,19 @@ jobs:
 
       - name: Build for iOS Simulator
         run: |
+          set -o pipefail
           xcodebuild build \
             -project "SuperFanSearch.xcodeproj" \
             -target "SchoolSearch" \
             -sdk iphonesimulator \
             -configuration Debug \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee build.log
+
+      # If the build fails, turn each compiler error into a GitHub annotation so it
+      # shows up right on the pull request's "Files changed" / "Checks" page.
+      - name: Report compiler errors
+        if: failure()
+        run: |
+          grep -E "(error|fatal error):" build.log | sort -u | head -40 | while IFS= read -r line; do
+            echo "::error::$line"
+          done
