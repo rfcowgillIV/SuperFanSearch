@@ -73,3 +73,8 @@ No more `fatalError()`.
 
 No Swift compiler was available where these changes were made, so the first Xcode build is the
 real compile check. Any error will point to the exact line.
+
+## Ongoing protection (added later in October 2026)
+
+- **`SECURITY.md`** tells people how to report a security problem privately instead of in a public issue. For the "Report a vulnerability" button to appear, turn on **Settings → Code security → Private vulnerability reporting**.
+- CodeQL scanning wasn't added here: Swift scanning needs the app to fully compile on a Mac build server, which is worth setting up once the app builds cleanly in current Xcode. You can add it later from **Settings → Code security → CodeQL analysis → Set up**.
