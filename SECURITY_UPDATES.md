@@ -78,3 +78,8 @@ real compile check. Any error will point to the exact line.
 
 - **`SECURITY.md`** tells people how to report a security problem privately instead of in a public issue. For the "Report a vulnerability" button to appear, turn on **Settings → Code security → Private vulnerability reporting**.
 - CodeQL scanning wasn't added here: Swift scanning needs the app to fully compile on a Mac build server, which is worth setting up once the app builds cleanly in current Xcode. You can add it later from **Settings → Code security → CodeQL analysis → Set up**.
+- **Storyboard fix (found by the new automated build):** `Main.storyboard` still contained an
+  old `UISearchDisplayController`, which Apple removed for apps targeting iOS 13 or later, so the
+  app wouldn't compile in current Xcode. The code already uses the modern `UISearchController`
+  (set up in `MasterViewController.viewDidLoad`), so the leftover object and its outlet were
+  deleted. Search works exactly as before.

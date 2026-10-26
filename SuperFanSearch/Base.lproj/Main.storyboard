@@ -114,19 +114,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="uVY-G9-UFF" id="CBZ-XO-VE7"/>
                         <outlet property="tableView" destination="r7i-6Z-zg0" id="mYa-N7-qHb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="uVY-G9-UFF">
-                    <connections>
-                        <outlet property="delegate" destination="7bK-jq-Zjz" id="2LM-qb-o1W"/>
-                        <outlet property="searchContentsController" destination="7bK-jq-Zjz" id="pGN-Cr-TsB"/>
-                        <outlet property="searchResultsDataSource" destination="7bK-jq-Zjz" id="urF-Ev-FnA"/>
-                        <outlet property="searchResultsDelegate" destination="7bK-jq-Zjz" id="fag-uO-kwZ"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
